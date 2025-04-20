@@ -64,7 +64,7 @@ const CampaignForm: React.FC<CampaignFormProps> = ({ isEditing = false }) => {
     const fetchProfiles = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${process.env.VITE_URL}/scrape/profiles`);
+        const response = await axios.get(`${import.meta.env.VITE_URL}/scrape/profiles`);
         setProfiles(response.data); // Assuming response is an array of LinkedIn profiles
         setLoading(false);
       } catch (err) {

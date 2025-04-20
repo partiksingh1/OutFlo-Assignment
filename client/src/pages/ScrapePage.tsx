@@ -20,7 +20,7 @@ const ScrapePage: React.FC = () => {
   const fetchProfiles = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${process.env.VITE_URL}/scrape/profiles`);
+      const response = await axios.get(`${import.meta.env.VITE_URL}/scrape/profiles`);
       setProfiles(response.data);
     } catch (err) {
       console.error('Error fetching profiles:', err);
