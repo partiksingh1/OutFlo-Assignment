@@ -19,7 +19,7 @@ const ScrapeForm: React.FC<ScrapeFormProps> = ({ onScrape }) => {
     setError('');
 
     try {
-      await axios.post('http://localhost:3000/api/v1/scrape/scraping', { searchUrl , numProfiles});
+      await axios.post(`${process.env.VITE_URL}/scrape/scraping`, { searchUrl , numProfiles});
       onScrape(); // Refresh profile list
       alert('Scraping completed successfully!');
     } catch (err) {

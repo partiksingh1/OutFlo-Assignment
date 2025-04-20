@@ -25,7 +25,7 @@ const MessageGenerator: React.FC = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/v1/scrape/profiles');
+        const response = await axios.get(`${process.env.VITE_URL}/scrape/profiles`);
         setProfiles(response.data);
       } catch (err) {
         setFetchError('Failed to fetch profiles from database');

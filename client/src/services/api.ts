@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Campaign, LinkedInProfileData } from '../types';
 
-const API_URL = 'http://localhost:3000/api/v1';
+const API_URL = `${process.env.VITE_URL}`;
 
 const api = axios.create({
   baseURL: API_URL,
